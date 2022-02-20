@@ -8,16 +8,16 @@ function carousel(img_path)
 (function carousel_change()
 {
 	const img_paths =
-		['../src/images/product-1.png',
-			'../src/images/product-2.png',
-			'../src/images/product-3.png'
+		['./../src/images/product-1.png',
+			'./../src/images/product-2.png',
+			'./../src/images/product-3.png'
 		]
 
 	//counter
 	let i = 1
 
 	// Default bg img
-	document.getElementById('carousel-container').style.backgroundImage = `url("./${ img_paths[0] }")`
+	document.getElementById('carousel-container').style.backgroundImage = `url("${ img_paths[0] }")`
 
 	setInterval(() =>
 	{
