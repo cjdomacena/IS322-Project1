@@ -17,7 +17,7 @@ function carousel(img_path)
 	let i = 1
 
 	// Default bg img
-	document.getElementById('carousel-container').style.backgroundImage = `url("${ img_paths[0] }")`
+	document.getElementById('carousel-container').style.backgroundImage = `url("./${ img_paths[0] }")`
 
 	setInterval(() =>
 	{
