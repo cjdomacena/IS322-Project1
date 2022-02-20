@@ -7,7 +7,7 @@ function carousel(img_path)
 // IIFE
 (function carousel_change()
 {
-	const img_paths = ['../src/images/product-1.png', '../src/images/product-2.png', '../src/images/product-3.png']
+	const img_paths = ['https://cjdomacena.github.io/IS322-Project1/src/images/product-1.png', 'https://cjdomacena.github.io/IS322-Project1/src/images/product-2.png', 'https://cjdomacena.github.io/IS322-Project1/src/images/product-3.png']
 
 	//counter
 	let i = 1
