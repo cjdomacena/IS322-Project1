@@ -8,7 +8,7 @@ function carousel(img_path)
 (function carousel_change()
 {
 	const img_paths =
-		['/../src/images/product-1.png',
+		['../src/images/product-1.png',
 			'../src/images/product-2.png',
 			'../src/images/product-3.png'
 		]
