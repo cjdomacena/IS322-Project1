@@ -1,6 +1,4 @@
 const base_url = 'https://fakestoreapi.com'
-let current_products;
-
 // Fetch all products
 const getAllProducts = async () =>
 {
@@ -25,6 +23,7 @@ const getCategories = async () =>
 	return res
 }
 
+// Fetch items in specific category. Provided by api
 const getCategoryItems = async (category) =>
 {
 	const data = await fetch(`${ base_url }/products/category/${ category }`);
@@ -33,6 +32,7 @@ const getCategoryItems = async (category) =>
 	return res;
 }
 
+// Render products
 const displayAllProducts = (data) =>
 {
 	let prod_list = document.getElementById('products-list');
@@ -95,6 +95,7 @@ const displayAllProducts = (data) =>
 	})
 }
 
+// Display all categories
 const displayAllCategories = (data) =>
 {
 	const select = document.getElementById('filter-category');
@@ -107,13 +108,14 @@ const displayAllCategories = (data) =>
 	})
 }
 
-
+// Load data and put categories in select input
 document.addEventListener("DOMContentLoaded", () =>
 {
 	getCategories().then((data) => displayAllCategories(data));
 	getAllProducts().then((data) => displayAllProducts(data));
 })
 
+// Category Filter
 const cat_filter_btn = document.getElementById('filter-category');
 cat_filter_btn.addEventListener('change', (e) =>
 {
@@ -126,6 +128,7 @@ cat_filter_btn.addEventListener('change', (e) =>
 	}
 })
 
+// Price filter
 const price_filter_btn = document.getElementById('filter-price');
 price_filter_btn.addEventListener('change', (e) =>
 {
@@ -145,6 +148,7 @@ price_filter_btn.addEventListener('change', (e) =>
 	}
 })
 
+// Name filter
 const name_filter_btn = document.getElementById('filter-name');
 name_filter_btn.addEventListener('change', (e) =>
 {
