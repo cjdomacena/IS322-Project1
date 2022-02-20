@@ -8,3 +8,7 @@ Christian Domacena
 - [X] Product Lists
     
    
+### Resources
+- [Fake products Api](https://fakestoreapi.com)
+- SCSS
+- Gulp.js
