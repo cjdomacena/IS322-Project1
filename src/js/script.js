@@ -2,7 +2,7 @@
 function carousel(img_path)
 {
 	const carousel_container = document.getElementById('carousel-container')
-	carousel_container.style.backgroundImage = `url("IS322-Project1/${ img_path }")`
+	carousel_container.style.backgroundImage = `${ img_path }")`
 }
 // IIFE
 (function carousel_change()
@@ -13,7 +13,7 @@ function carousel(img_path)
 	let i = 1
 
 	// Default bg img
-	document.getElementById('carousel-container').style.backgroundImage = `url("IS322-Project1/${ img_paths[0] }")`
+	document.getElementById('carousel-container').style.backgroundImage = `url("${ img_paths[0] }")`
 
 	setInterval(() =>
 	{
