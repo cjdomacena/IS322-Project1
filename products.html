@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="dist/css/products.css">
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>Products</title>
+	</head>
+
+	<body>
+		<header>
+			<nav id="navigation">
+				<div id="nav-logo">
+					<a href="/">Kicks Daily</a>
+				</div>
+				<ul id="nav-items">
+					<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="/products.html" class="nav-link">Products</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="main-products">
+			<div class="products-container">
+				<div id="products-filters">
+					<div>
+						<label for="products-orderBy">Order By:</label>
+						<select id="filter-order">
+							<option default>Name</option>
+							<option value="order-desc">A - Z</option>
+							<option value="order-asc">Z - A</option>
+						</select>
+					</div>
+					<div>
+						<label for="products-orderBy">Price:</label>
+						<select id="filter-price">
+							<option default>Price: </option>
+							<option value="price-asc">Low to High </option>
+							<option value="price-desc">High to Low</option>
+						</select>
+					</div>
+					<div>
+						<label for="products-orderBy">Order By:</label>
+						<select id="filter-category">
+							<option default>Category</option>
+						</select>
+					</div>
+
+				</div>
+			</div>
+		</main>
+
+
+
+		<footer>
+			<div id="footer-container">
+				<div class="footer-company">
+					<h3>&copy; Kicks Daily</h3>
+				</div>
+				<div class="footer-address">
+					<P>585 Berge Wall, Suite 727, 58163-6227, Rileyborough, New York, United States</P>
+				</div>
+				<div class="footer-socials">
+					<ul>
+						<li><a href="#" class="fa fa-facebook"></a></li>
+						<li><a href="#" class="fa fa-twitter"></a></li>
+						<li><a href="#" class="fa fa-linkedin"></a></li>
+						<li><a href="#" class="fa fa-instagram"></a></li>
+					</ul>
+
+
+				</div>
+			</div>
+		</footer>
+		<script src="/dist/js/products.js"></script>
+	</body>
+
+</html>

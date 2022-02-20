@@ -1,0 +1,134 @@
+@import "normalize";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Scope+One&family=Titillium+Web:ital,wght@1,700&display=swap");
+// Breakpoints
+$screen-lg: 1366px;
+$screen-md: 1024px;
+$screen-sm: 768px;
+$screen-xs: 411px;
+
+// Roboto
+@mixin font($font_style) {
+  @if ($font_style == "roboto") {
+    font-family: "Roboto", sans-serif;
+  } @else if($font_style == "scope_one") {
+    font-family: "Scope One", serif;
+  } @else if($font_style == "titillium_web") {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  } @else {
+    @warn "font mixin only supports: roboto, scope_one, titillium_web";
+  }
+}
+
+html {
+  font-size: 16px;
+}
+
+// Navigation
+header {
+
+  #navigation {
+    max-width: $screen-lg;
+    height: 70px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 1rem;
+    justify-content: space-between;
+    align-items: center;
+    color: #070335;
+
+	@media screen and (max-width: $screen-sm) {
+		padding: 0;
+	}
+
+	a{
+		   color: #05076F;
+		   @include font('roboto');
+		   font-weight: 400;
+		   &:hover{
+			   color:rgb(68, 68, 68);
+		   }
+	}
+    // Nav logo
+    #nav-logo {
+      padding: 0.5rem 1rem;
+    }
+    // Nav items
+    #nav-items {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: auto;
+      margin: 0;
+      padding: 0;
+
+      .nav-item,
+      .nav-link {
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+}
+
+
+//main
+
+#main-products
+{
+  margin: 5rem 0;
+  background-color: red;
+  .products-container{
+    max-width: $screen-lg;
+    margin: 0 auto;
+    padding: 1rem;
+
+    #products-filters{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+select {
+  option{
+    @include font('roboto');
+    text-transform: capitalize;
+  }
+}
+
+footer {
+  color: white;
+  background-color: #131313;
+  #footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: $screen-lg;
+    margin: 0 auto;
+
+	@media screen and (max-width: $screen-md) {
+		flex-direction: column;
+		padding: 1rem;
+		text-align: center;
+	}
+
+    .footer-socials {
+      ul {
+        list-style: none;
+        display: flex;
+        a {
+          padding: 0 .5rem;
+        }
+      }
+    }
+  }
+  p {
+    @include font("scope_one");
+  }
+  h3 {
+    @include font("titillium_web");
+    font-style: italic;
+  }
+}
