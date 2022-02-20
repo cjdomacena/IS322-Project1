@@ -1,6 +1,4 @@
 const base_url = 'https://fakestoreapi.com'
-
-
 let current_products;
 
 // Fetch all products
@@ -37,8 +35,8 @@ const getCategoryItems = async (category) =>
 
 const displayAllProducts = (data) =>
 {
-
-	let prod_list = document.getElementById('products-list')
+	let prod_list = document.getElementById('products-list');
+	prod_list.innerHTML = ""
 	data.map((data) =>
 	{
 		const prod_item = document.createElement('div');
@@ -128,4 +126,55 @@ cat_filter_btn.addEventListener('change', (e) =>
 	}
 })
 
+const price_filter_btn = document.getElementById('filter-price');
+price_filter_btn.addEventListener('change', (e) =>
+{
+	let prod_list = document.getElementById('products-list')
+	prod_list.innerHTML = ""
+
+	let filter_val = e.currentTarget.value
+
+	if (filter_val === 'price-asc')
+		getAllProducts().then((data) => displayAllProducts(data.sort((a, b) => a.price - b.price)))
+	else if (filter_val === 'price-desc')
+	{
+		getAllProducts().then((data) => displayAllProducts(data.sort((a, b) => b.price - a.price)))
+	} else
+	{
+		getAllProducts().then((data) => displayAllProducts(data))
+	}
+})
+
+const name_filter_btn = document.getElementById('filter-name');
+name_filter_btn.addEventListener('change', (e) =>
+{
+
+	switch (e.currentTarget.value)
+	{
+		case 'name-desc':
+			getAllProducts().then((data) => displayAllProducts(data.sort((a, b) =>
+			{
+				const prod_A = a.title;
+				const prod_B = b.title;
+
+				if (prod_A < prod_B) return -1;
+				if (prod_A > prod_B) return 1;
+			})))
+			break;
+		case 'name-asc':
+			getAllProducts().then((data) => displayAllProducts(data.sort((a, b) =>
+			{
+				const prod_A = a.title;
+				const prod_B = b.title;
+
+				if (prod_A > prod_B) return -1;
+				if (prod_A < prod_B) return 1;
+			})))
+			break;
+		default:
+			getAllProducts().then((data) => displayAllProducts(data));
+			break;
+	}
+
+})
 
