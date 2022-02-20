@@ -4,5 +4,5 @@ Christian Domacena
 
 
 ### Todo
-[X] Homepage
-[X] Product Lists
+[ X ] Homepage
+[ X ] Product Lists
