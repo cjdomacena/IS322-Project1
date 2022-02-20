@@ -7,7 +7,6 @@ Christian Domacena
 - [X] Homepage
 - [X] Product Lists
     
-   
 ### Resources
 - [Fake products Api](https://fakestoreapi.com)
 - [SCSS](https://sass-lang.com/)
