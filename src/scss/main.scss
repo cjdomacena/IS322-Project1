@@ -1,3 +1,76 @@
-h1{
-	color:'green'
+@import "normalize";
+
+// Breakpoints
+$screen-lg: 1366px;
+$screen-md: 1024px;
+$screen-sm: 768px;
+$screen-xs: 411px;
+
+html {
+  font-size: 16px;
+}
+// Navigation
+header {
+  background-color: #010231;
+  #navigation {
+    max-width: $screen-lg;
+    height: 70px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 1rem;
+    justify-content: space-between;
+    align-items: center;
+	color: white;
+    // Nav logo
+    #nav-logo {
+      padding: 0.5rem 1rem;
+    }
+    // Nav items
+    #nav-items {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: auto;
+      background-color: red;
+      margin: 0;
+      padding: 0;
+
+      .nav-item,
+      .nav-link {
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+}
+
+// Carousel
+#section-carousel {
+  position: relative;
+  height: 512px;
+  background-image: radial-gradient(
+    circle 610px at 5.2% 51.6%,
+    rgba(5, 8, 114, 1) 0%,
+    rgba(7, 3, 53, 1) 97.5%
+  );
+  display: grid;
+  place-content: center;
+  #carousel-container {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 512px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    opacity: 0.95;
+  }
+  #carousel-text {
+    color: white;
+    z-index: 20;
+    font-size: 3rem;
+    text-align: center;
+  }
 }
