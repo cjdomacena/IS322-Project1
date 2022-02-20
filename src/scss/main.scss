@@ -1,17 +1,32 @@
 @import "normalize";
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Scope+One&family=Titillium+Web:ital,wght@1,700&display=swap");
 // Breakpoints
 $screen-lg: 1366px;
 $screen-md: 1024px;
 $screen-sm: 768px;
 $screen-xs: 411px;
 
+// Roboto
+@mixin font($font_style) {
+  @if ($font_style == "roboto") {
+    font-family: "Roboto", sans-serif;
+  } @else if($font_style == "scope_one") {
+    font-family: "Scope One", serif;
+  } @else if($font_style == "titillium_web") {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  } @else {
+    @warn "font mixin only supports: roboto, scope_one, titillium_web";
+  }
+}
+
 html {
   font-size: 16px;
 }
 // Navigation
 header {
-  background-color: #010231;
+
   #navigation {
     max-width: $screen-lg;
     height: 70px;
@@ -20,7 +35,20 @@ header {
     padding: 0 1rem;
     justify-content: space-between;
     align-items: center;
-	color: white;
+    color: #070335;
+
+	@media screen and (max-width: $screen-sm) {
+		padding: 0;
+	}
+
+	a{
+		   color: #05076F;
+		   @include font('roboto');
+		   font-weight: 400;
+		   &:hover{
+			   color:rgb(68, 68, 68);
+		   }
+	}
     // Nav logo
     #nav-logo {
       padding: 0.5rem 1rem;
@@ -32,7 +60,6 @@ header {
       justify-content: space-around;
       align-items: center;
       width: auto;
-      background-color: red;
       margin: 0;
       padding: 0;
 
@@ -72,5 +99,68 @@ header {
     z-index: 20;
     font-size: 3rem;
     text-align: center;
+    h1 {
+      @include font("titillium_web");
+      font-size: 7rem;
+    }
+  }
+}
+
+#main-content {
+  max-width: $screen-lg;
+  margin: 5rem auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  h1 {
+    @include font("roboto");
+    font-weight: 100;
+    font-size: 3rem;
+  }
+  p {
+    @include font("scope_one");
+    font-size: 1rem;
+    line-height: 2rem;
+    max-width: 70ch;
+  }
+
+  @media screen and (max-width: $screen-lg) {
+    padding: 0 2rem;
+    margin: 2rem auto;
+  }
+}
+
+footer {
+  color: white;
+  background-color: #131313;
+  #footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: $screen-lg;
+    margin: 0 auto;
+
+	@media screen and (max-width: $screen-md) {
+		flex-direction: column;
+		padding: 1rem;
+		text-align: center;
+	}
+
+    .footer-socials {
+      ul {
+        list-style: none;
+        display: flex;
+        a {
+          padding: 0 .5rem;
+        }
+      }
+    }
+  }
+  p {
+    @include font("scope_one");
+  }
+  h3 {
+    @include font("titillium_web");
+    font-style: italic;
   }
 }
