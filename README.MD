@@ -12,4 +12,4 @@ Christian Domacena
 - [SCSS](https://sass-lang.com/)
     - Styling
 - [Gulp.js](https://gulpjs.com/) 
-    - I used it to compile my scss and convert it to scss. Also, I used it to minimize my javascript. (Not that I have a lot, but just for practice.)
+    - I used it to compile my scss and convert it to scss. Also, I used it to minimize my javascript. 
